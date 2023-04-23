@@ -1,0 +1,30 @@
+
+<input type="text" [(ngModel)]="directiveColor" placeholder="enter color">
+<!-- <p [color]="directiveColor">!!!מרפאת שיינים לאומית</p> -->
+
+<input type="text" placeholder="הקש שם של מרפאת שיניים"  [(ngModel)]="string"  name="1"/>
+<P [color]="directiveColor">{{ "מרפאת שיניים" | userTitle:string}}</P>
+
+<form>
+    <br>
+    <input type="text" [(ngModel)]="userName" #name="ngModel"   name="11" placeholder="name" required minlength="3"/>
+    <ng-container *ngIf="name.errors" >
+        <div *ngIf="name.errors['required']">
+            השדה הוא שדה חובה
+        </div>
+    </ng-container>
+    <br/>
+    <br>
+    <input   type="password" [(ngModel)]="password" #passwordM="ngModel" name="22" required minlength="3" placeholder="password"/>
+    <ng-container *ngIf="passwordM.errors">
+        <div *ngIf="passwordM.errors['required']">
+            מינימום 3 תוים
+        </div>
+    </ng-container>
+    <br/>
+    <button (click)="check()">ok</button>
+</form>
+ <p *ngIf="isExists">dont found</p>
+<p>{{"תודה" | userTitle:"ולהתראות"}}</p>
+<!-- <p>{{2 | userTitle:"3"}}</p> -->
+

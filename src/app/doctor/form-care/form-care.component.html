@@ -1,0 +1,43 @@
+<p>form-care works!</p>
+
+
+<form dir="rtl" [formGroup]="userForm">
+  
+    <br>
+    <input   type="text" placeholder="tzPatient" formControlName="tzPatient" />
+    <ng-container *ngIf="userForm.controls['tzPatient'].errors">
+        <div *ngIf="userForm.controls['tzPatient'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+
+    <br/>
+    <br>
+    <select formControlName="dayS"  >
+        <option *ngFor="let d of dayS" value={{d}}  [attr.selected]="d === treat.dayS ? true : null">{{d}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <br>
+    <select formControlName="kind">
+        <option *ngFor="let k of kinds" value={{k}}  [attr.selected]="k === treat.kind ? true : null">{{k}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="day">
+        <option *ngFor="let d of days" value={{d}}  [attr.selected]="d === treat.day ? true : null">{{d}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="hour">
+        <option *ngFor="let k of hours" value={{k}}  [attr.selected]="k === treat.hour ? true : null">{{k}}</option>
+        
+    </select>
+    <br/>
+        <button  (click)="keep()">שמירה</button>
+</form>
+
+<p *ngIf="treat">{{treat.kind}}</p>

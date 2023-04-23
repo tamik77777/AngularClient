@@ -1,0 +1,81 @@
+<!-- <form dir="rtl" [formGroup]="userForm">
+    <div>קביעת תורים:</div>
+   <br>
+    <select formControlName="idDoctor">
+        <option *ngFor="let d of doctors">{{d}}</option>
+        
+    </select>
+    <br/> 
+    <br>
+    <input   type="text" placeholder="tzPatient" formControlName="id" />
+    <ng-container *ngIf="userForm.controls['id'].errors">
+        <div *ngIf="userForm.controls['id'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+
+    <br/>
+    <br>
+    <select formControlName="kind">
+        <option *ngFor="let k of kinds">{{k}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="day">
+        <option *ngFor="let d of days">{{d}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="hour">
+        <option *ngFor="let k of hours">{{k}}</option>
+        
+    </select>
+    <br/>
+    <button   (click)="add()">שמירה</button>
+    <p *ngIf="bool">תודה ולהתראות!!!</p>
+</form>  -->
+
+ 
+
+<form dir="rtl" [formGroup]="userForm">
+  
+    <br>
+    <input   type="text" placeholder="tzPatient" formControlName="tzPatient" />
+    <ng-container *ngIf="userForm.controls['tzPatient'].errors">
+        <div *ngIf="userForm.controls['tzPatient'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+
+    <br/>
+    <br>
+    <select formControlName="dayS"  >
+        <option *ngFor="let d of dayS" value={{d}}  [attr.selected]="d === treat.dayS ? true : null">{{d}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <br>
+    <select formControlName="kind">
+        <option *ngFor="let k of kinds" value={{k}}  [attr.selected]="k === treat.kind ? true : null">{{k}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="day">
+        <option *ngFor="let d of days" value={{d}}  [attr.selected]="d === treat.day ? true : null">{{d}}</option>
+        
+    </select>
+    <br/>
+    <br>
+    <select formControlName="hour">
+        <option *ngFor="let k of hours" value={{k}}  [attr.selected]="k === treat.hour ? true : null">{{k}}</option>
+        
+    </select>
+    <br/>
+        <button  (click)="keep()">שמירה</button>
+</form>
+
+<p *ngIf="treat">{{treat.kind}}</p>

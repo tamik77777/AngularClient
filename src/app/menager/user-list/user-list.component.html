@@ -1,0 +1,16 @@
+
+<ul>
+    <li *ngFor="let user of users">
+        <br>
+        <button (click)="deleteUser(user)">delete</button>
+        <br/>
+        <br>
+        <div (click)="showUser(user.password)">{{user.id}} : {{user.name}} :{{user.pel}} : {{user.address}}:{{user.userName}}:{{user.password}}:{{user.num}}</div>
+        <br/>
+    </li>
+</ul>
+<button   (click)="ToAdd()">add-user</button>
+
+<!-- <form-user (onAddUser)="onAddUser($event)"  ></form-user> -->
+
+<!-- <button (onAddUser)="onAddUser($event)"   (click)="ToAdd()">add-user</button> -->

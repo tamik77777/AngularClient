@@ -1,0 +1,34 @@
+
+
+<!-- <p>all-treatment</p>
+<div >
+  <ul>
+      <li *ngFor="let treat of treats">
+          <div>{{treat.id}} :{{treat.kind}} : {{treat.day}}:{{treat.hour}}</div>
+      </li>
+  </ul>
+  </div>
+
+<button (click)="addQueue()">קביעת תור</button> -->
+
+
+<div>
+  <p>all-treatment</p>
+  <div>
+    <ul >
+      <li *ngFor="let treat of treats">
+        <!-- <br>
+        <button (click)="update(treat)">update</button>
+        <br /> -->
+        <div>{{treat.id}} סוג : {{treat.kind}} יום : {{treat.day}} שעה: {{treat.hour}}</div>
+      </li>
+    </ul>
+  </div>
+  <button (click)="addTreat()">הוספת טיפול</button>
+</div>
+
+<!-- <all-treatment *ngIf="!flag"></all-treatment> -->
+
+<queue *ngIf="is" (onAdd)="hideForm()"></queue>
+
+<!-- <form-care *ngIf="selectedTreat" [treat]="selectedTreat" (onAdd)="hideForm()"></form-care> -->

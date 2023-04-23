@@ -1,0 +1,70 @@
+<table>
+    <div>
+        <th>מחיקה</th>
+        <th>סוג טיפול</th>
+        <th>כתובת</th>
+        <th>פלפון</th>
+        <th>שם</th>
+        <th>תעודת זהות</th>
+    </div>
+    <div *ngFor="let patient of patients">
+    <tr  ><td> <button (click)="deletePatient(patient)">delete</button></td><td>{{patient.kind}}</td> <td>{{patient.address}} </td> <td>{{patient.pel}}</td><td>{{patient.name}}</td> <td>{{patient.id}}</td></tr>
+  </div>
+</table>
+
+<table *ngIf="flagAdd" dir="rtl" [formGroup]="userForm">
+    <td>
+    <input   type="text" placeholder="id" formControlName="id" />
+    <ng-container *ngIf="userForm.controls['id'].errors">
+        <div *ngIf="userForm.controls['id'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+   </td>
+   <td>
+    <input   type='text' placeholder="name"  formControlName="name" />
+    <ng-container *ngIf="userForm.controls['name'].errors">
+        <div *ngIf="userForm.controls['name'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+   <td>
+    <input   type='text' placeholder="pel"formControlName="pel" />
+    <ng-container *ngIf="userForm.controls['pel'].errors">
+        <div *ngIf="userForm.controls['pel'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    </td>
+    <td>
+    <input   type='text' placeholder="address" formControlName="address" />
+    <ng-container *ngIf="userForm.controls['address'].errors">
+        <div *ngIf="userForm.controls['address'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+   </td>
+   <td>
+   <td>
+    <input   type='text' placeholder="kindTreatment" formControlName="kind" />
+    <ng-container *ngIf="userForm.controls['kind'].errors">
+        <div *ngIf="userForm.controls['kind'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    </td>
+    <td>
+    <input   type='text' placeholder="id-doctor" formControlName="num" />
+    <ng-container *ngIf="userForm.controls['num'].errors">
+        <div *ngIf="userForm.controls['num'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+   </td>
+    
+    <button  [disabled]="userForm.invalid"  (click)="keep()">שמירה</button>
+</table>
+
+<button (click)="addPatient()">add-patient</button>
+
+<button (click)="get()">treatments</button>

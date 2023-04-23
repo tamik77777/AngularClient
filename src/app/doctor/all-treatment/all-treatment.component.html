@@ -1,0 +1,26 @@
+<!-- <p>all-treatment works!</p>
+<ul>
+  <li *ngFor="let c of CurrentTreats">
+    <div>{{c.hour}}</div>>
+  </li>
+</ul> -->
+<div *ngIf="flag">
+  <p>all-treatment</p>
+  <div>
+    <ul >
+      <li *ngFor="let treat of treats">
+        <br>
+        <button (click)="update(treat)">update</button>
+        <br />
+        <div>{{treat.id}} סוג : {{treat.kind}} יום : {{treat.day}} שעה: {{treat.hour}}</div>
+      </li>
+    </ul>
+  </div>
+  <button (click)="addTreat()">הוספת טיפול</button>
+</div>
+
+<all-treatment *ngIf="!flag"></all-treatment>
+
+<form-care *ngIf="is" (onAdd)="hideForm()"></form-care>
+
+<form-care *ngIf="selectedTreat" [treat]="selectedTreat" (onAdd)="hideForm()"></form-care>

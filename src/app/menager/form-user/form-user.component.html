@@ -1,0 +1,62 @@
+<p>form-user works!</p>
+
+<form dir="rtl" [formGroup]="userForm">
+    <br>
+    <input   type='text' placeholder="password" #password  formControlName="password" />
+    <ng-container *ngIf="userForm.controls['password'].errors">
+        <div *ngIf="userForm.controls['password'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br/>
+    <br>
+    <input   type='text' placeholder="userName" formControlName="userName" />
+    <ng-container *ngIf="userForm.controls['userName'].errors">
+        <div *ngIf="userForm.controls['userName'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br/>
+    <br>
+    <input   type="text" placeholder="id" formControlName="id" />
+    <ng-container *ngIf="userForm.controls['id'].errors">
+        <div *ngIf="userForm.controls['id'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br/>
+    <br>
+    <input   type='text' placeholder="name"  formControlName="name" />
+    <ng-container *ngIf="userForm.controls['name'].errors">
+        <div *ngIf="userForm.controls['name'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br>
+    <br/>
+    <input   type='text' placeholder="pel"formControlName="pel" />
+    <ng-container *ngIf="userForm.controls['pel'].errors">
+        <div *ngIf="userForm.controls['pel'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br>
+    <br/>
+    <input   type='text' placeholder="address" formControlName="address" />
+    <ng-container *ngIf="userForm.controls['address'].errors">
+        <div *ngIf="userForm.controls['address'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br/>
+    <br>
+    <input   type='number' placeholder="kindUser" formControlName="num" />
+    <ng-container *ngIf="userForm.controls['num'].errors">
+        <div *ngIf="userForm.controls['num'].errors['required']">
+        השדה הוא שדה חובה
+        </div>
+   </ng-container>
+    <br/>
+    
+    <button  (click)="add()">שמירה</button>
+</form>
